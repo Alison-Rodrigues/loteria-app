@@ -1,0 +1,42 @@
+<main class="box-container">
+
+  <section class="img-container">
+    <img src="assets/images/aposta-facil-logo.png" alt="Pessoa com dinheiro" class="img-login">
+  </section><!--img-container-->
+
+  <section class="login-container">
+    <h2 class="title-login">Entre e aposte!</h2>
+    <form class="form-login">
+      <mat-form-field class="input-user email">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@examplo.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Insira um endereço de e-mail válido
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input-user password">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="pwdFormControl">
+        <mat-error *ngIf="pwdFormControl.hasError('required')">
+          Password é <strong>obrigatório</strong>
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button type="submit" class="btn-login" mat-flat-button color="primary">Entrar</button>
+    </form><!--form-login-->
+
+    <div class="line"></div>
+
+    <span class="register-span">Não tem uma conta? <a routerLink="/sign-up" class="register-link">Clique aqui para cadastrar agora!</a></span>
+
+
+  </section><!--login-container-->
+
+</main><!--box-container-->
