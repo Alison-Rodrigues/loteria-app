@@ -12,6 +12,11 @@ import { RegisterpageComponent } from './components/registerpage/registerpage.co
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import { NgxMaskModule } from 'ngx-mask'
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 
 @NgModule({
   declarations: [
@@ -30,9 +35,14 @@ import {MatDividerModule} from '@angular/material/divider';
     NgIf,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    NgxMaskModule.forRoot(),
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-br'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

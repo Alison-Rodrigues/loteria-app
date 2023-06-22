@@ -1,1 +1,141 @@
-<p>registerpage works!</p>
+<main class="box-container">
+
+  <section class="info-container">
+    <h2 class="title-info">Porque apostar na maior casa lotérica do Brasil?</h2>
+
+  </section><!--info-container-->
+
+  <section class="register-container">
+
+    <h2 class="register-title">Cadastre-se agora!</h2>
+
+    <form action="" class="form-register">
+
+      <div class="form-title-box">
+        <p class="form-title">Dados pessoais</p>
+      </div><!--form-title-box-->
+
+      <div class="box-name">
+        <mat-form-field class="input-user name">
+          <mat-label>Nome</mat-label>
+          <input matInput [formControl]="nameFormControl">
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Nome é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="nameFormControl.hasError('maxlength')">
+            Quantidade de caracteres excedida
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user last-name">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput [formControl]="lastNameFormControl">
+          <mat-error *ngIf="lastNameFormControl.hasError('required')">
+            Sobrenome é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="lastNameFormControl.hasError('maxlength')">
+            Quantidade de caracteres excedida
+          </mat-error>
+        </mat-form-field>
+
+      </div><!--box-name-->
+
+      <div class="email-cpf-container">
+
+        <mat-form-field class="input-user email">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@examplo.com">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Insira um endereço de e-mail válido
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('maxlength')">
+            Quantidade de caracteres excedida
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user cpf">
+          <mat-label>CPF</mat-label>
+          <input matInput [formControl]="cpfFormControl" placeholder="000.000.000-00" mask="000.000.000-00">
+          <mat-error *ngIf="cpfFormControl.hasError('required')">
+            CPF é <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+
+      </div><!--email-cpf-container-->
+
+      <div class="birthdate-phonenumber-container">
+
+        <mat-form-field class="input-user birth-date">
+          <mat-label>Data de nascimento</mat-label>
+          <input matInput [matDatepicker]="datepicker" mask="d0/M0/0000" [dropSpecialCharacters]="false" required>
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker [touchUi]="true">
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancelar</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Confirmar</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+
+        </mat-form-field>
+
+        <mat-form-field class="input-user phone-number">
+          <mat-label>Celular/Telefone</mat-label>
+          <input matInput mask="(00)00000-0000 || (00)0000-0000">
+        </mat-form-field>
+
+      </div><!--birthdate-phonenumber-container-->
+
+      <div class="form-title-box">
+        <p class="form-title">Endereço</p>
+      </div><!--form-title-box-->
+
+      <div class="address-container">
+
+        <mat-form-field id="input-cep">
+          <mat-label>CEP</mat-label>
+          <input matInput mask="00000-000" [formControl]="cepFormControl">
+          <mat-error *ngIf="cepFormControl.hasError('required')">
+            CEP é <strong>obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field id="input-street">
+          <mat-label>Logradouro</mat-label>
+          <input matInput [formControl]="streetFormControl">
+          <mat-error *ngIf="streetFormControl.hasError('required')">
+            Logradouro é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="streetFormControl.hasError('maxlength')">
+            Quantidade de caracteres excedida
+          </mat-error>
+        </mat-form-field>
+
+      </div><!--address-container-->
+      <div class="address-container">
+
+        <mat-form-field id="input-neighborhood">
+          <mat-label>Bairro</mat-label>
+          <input matInput [formControl]="neighborhoodFormControl">
+          <mat-error *ngIf="neighborhoodFormControl.hasError('required')">
+            Bairro é <strong>obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="neighborhoodFormControl.hasError('maxlength')">
+            Quantidade de caracteres excedida
+          </mat-error>
+        </mat-form-field>
+
+
+      </div><!--address-container-->
+
+      <button type="submit" class="btn-register" mat-flat-button color="primary">Cadastrar</button>
+
+    </form><!--form-register-->
+
+  </section><!--register-container-->
+
+</main><!--box-container-->
+
+

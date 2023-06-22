@@ -22,7 +22,7 @@
         <mat-label>Senha</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" [formControl]="pwdFormControl">
         <mat-error *ngIf="pwdFormControl.hasError('required')">
-          Password é <strong>obrigatório</strong>
+          Senha é <strong>obrigatório</strong>
         </mat-error>
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
