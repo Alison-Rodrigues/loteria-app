@@ -15,6 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { NgxMaskModule } from 'ngx-mask'
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -28,6 +30,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -39,6 +42,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     NgxMaskModule.forRoot(),
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-br'}
