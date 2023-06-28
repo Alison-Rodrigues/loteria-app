@@ -46,26 +46,65 @@
   margin-bottom: 20px;
 }
 
-.box-name,
-.email-cpf-container,
-.birthdate-phonenumber-container, .address-container {
-  display: flex;
-  justify-content: space-between;
+.grid-container-data {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+  "name last-name"
+  "email cpf"
+  "birth-date phone-number";
+  gap: 10px 20px;
+  align-items: center;
+}
+.grid-container-address {
+  width: 100%;
+  display: grid;
+  grid-template:
+  "cep state"
+  "neighborhood city"
+  "street street"
+  / 1.5fr 2fr;
+  gap: 10px 20px;
+  align-items: center;
+}
+.input-user,
+.input-address {
   width: 100%;
 }
-.input-user {
-  width: 300px;
-  margin: 10px 0;
+.name {
+  grid-area: name;
+}
+.last-name {
+  grid-area: last-name;
+}
+.email {
+  grid-area: email;
+}
+.cpf {
+  grid-area: cpf;
+}
+.birth-date {
+  grid-area: birth-date;
+}
+.phone-number {
+  grid-area: phone-number;
+}
+.cep {
+  grid-area: cep;
+}
+.street {
+  grid-area: street;
+}
+.neighborhood {
+  grid-area: neighborhood;
+}
+.city {
+  grid-area: city;
+}
+.state {
+  grid-area: state;
+}
 
-}
-#input-cep, #input-neighborhood {
-  width: 180px;
-  margin: 10px 0;
-}
-#input-street {
-  width: 400px;
-  margin: 10px 0;
-}
 mat-error {
   font-size: 0.7rem;
 }
@@ -86,4 +125,5 @@ mat-error {
   color: #222222;
   opacity: 0.7;
   font-size: 1.2rem;
+  margin-bottom: 10px;
 }
