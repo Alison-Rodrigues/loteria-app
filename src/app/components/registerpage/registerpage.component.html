@@ -1,0 +1,109 @@
+<main class="box-container">
+
+  <section class="info-container">
+    <h2 class="title-info">Porque apostar na maior casa lotérica do Brasil?</h2>
+
+  </section><!--info-container-->
+
+  <section class="register-container">
+
+    <h2 class="register-title">Cadastre-se agora!</h2>
+
+    <form class="form-register" [formGroup]="formUser" #form="ngForm">
+
+      <div class="form-title-box">
+        <p class="form-title">Dados pessoais</p>
+      </div><!--form-title-box-->
+
+      <div class="grid-container-data">
+        <mat-form-field class="input-user name">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="formUser.get('name')?.invalid">{{getErrorMessage("name")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user last-name">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="formUser.get('lastName')?.invalid">{{getErrorMessage("lastName")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user email">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Ex. pat@examplo.com">
+          <mat-error *ngIf="formUser.get('email')?.invalid">{{getErrorMessage("email")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user cpf">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" placeholder="000.000.000-00" mask="000.000.000-00">
+          <mat-error *ngIf="formUser.get('cpf')?.invalid">{{getErrorMessage("cpf")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-user birthdayDate">
+          <mat-label>Data de nascimento</mat-label>
+          <input matInput formControlName="birthdayDate" placeholder="dd/mm/aaaa" mask="d0/M0/0000">
+          <mat-error *ngIf="formUser.get('birthdayDate')?.invalid">{{getErrorMessage("birthdayDate")}}</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="input-user phone-number">
+          <mat-label>Celular/Telefone</mat-label>
+          <input matInput mask="(00)00000-0000 || (00)0000-0000">
+        </mat-form-field>
+
+      </div><!--grid-container-data-->
+
+      <div class="form-title-box">
+        <p class="form-title">Endereço</p>
+      </div><!--form-title-box-->
+
+      <div class="grid-container-address">
+
+        <mat-form-field class="input-address cep">
+          <mat-label>CEP</mat-label>
+          <input matInput mask="00000-000" formControlName="cep" [(ngModel)]="cep" (blur)="searchCep()">
+          <mat-error *ngIf="formUser.get('cep')?.invalid">{{getErrorMessage("cep")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-address street">
+          <mat-label>Logradouro</mat-label>
+          <input matInput formControlName="street">
+          <mat-error *ngIf="formUser.get('street')?.invalid">{{getErrorMessage("street")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-address neighborhood">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="neighborhood">
+          <mat-error *ngIf="formUser.get('neighborhood')?.invalid">{{getErrorMessage("neighborhood")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-address city">
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="city">
+          <mat-error *ngIf="formUser.get('city')?.invalid">{{getErrorMessage("city")}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-address state">
+          <mat-label>Estado</mat-label>
+          <mat-select name="state" formControlName="state" [(ngModel)]="state">
+            <mat-option *ngFor="let state of states" [value]="state.value">
+              {{state.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formUser.get('state')?.invalid">{{getErrorMessage("state")}}</mat-error>
+        </mat-form-field>
+
+      </div><!--grid-container-address-->
+
+
+
+      <button type="submit" class="btn-register" mat-flat-button color="primary">Cadastrar</button>
+
+    </form><!--form-register-->
+
+  </section><!--register-container-->
+
+</main><!--box-container-->
+
+

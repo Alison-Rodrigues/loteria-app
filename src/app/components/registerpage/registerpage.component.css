@@ -1,0 +1,129 @@
+:host {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0097A7;
+}
+.box-container {
+  width: clamp(300px, 80%, 1500px);
+  height: 90%;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.info-container, .register-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.info-container {
+  background-color: #0098CB;
+  border-radius: 10px 0 0 10px;
+  color:#E3F0FF;
+}
+.register-container {
+  background-color: #E3F0FF;
+  border-radius: 0 10px 10px 0;
+}
+.form-register {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-title {
+  color: #222222;
+  font-size: clamp(1rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.grid-container-data {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+  "name last-name"
+  "email cpf"
+  "birth-date phone-number";
+  gap: 10px 20px;
+  align-items: center;
+}
+.grid-container-address {
+  width: 100%;
+  display: grid;
+  grid-template:
+  "cep state"
+  "neighborhood city"
+  "street street"
+  / 1.5fr 2fr;
+  gap: 10px 20px;
+  align-items: center;
+}
+.input-user,
+.input-address {
+  width: 100%;
+}
+.name {
+  grid-area: name;
+}
+.last-name {
+  grid-area: last-name;
+}
+.email {
+  grid-area: email;
+}
+.cpf {
+  grid-area: cpf;
+}
+.birth-date {
+  grid-area: birth-date;
+}
+.phone-number {
+  grid-area: phone-number;
+}
+.cep {
+  grid-area: cep;
+}
+.street {
+  grid-area: street;
+}
+.neighborhood {
+  grid-area: neighborhood;
+}
+.city {
+  grid-area: city;
+}
+.state {
+  grid-area: state;
+}
+
+mat-error {
+  font-size: 0.7rem;
+}
+.btn-register {
+  width: clamp(150px, 50%, 300px);
+  padding: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.form-title-box {
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+.form-title {
+  color: #222222;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
